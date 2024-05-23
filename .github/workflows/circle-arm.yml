@@ -22,11 +22,10 @@ jobs:
     - name: test
       run: |
         uname -a
+        env
         exit 1
-        # env
 
     - name: test2
-      if: always()
       run: echo Hello world
 
     - name: shutdown
