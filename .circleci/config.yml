@@ -11,7 +11,6 @@ jobs:
           command: |
             arch=arm64
             # arch=x64
-            set +e
 
             curl -Lo gh.json https://api.github.com/repos/actions/runner/releases/latest
 
@@ -53,7 +52,7 @@ jobs:
                 sleep 5
                 [[ -e /run/runner_connected ]] || {
                   $PWD/config.sh remove --token $TOKEN
-                  sudo poweroff
+                  sudo reboot
                 }
               done
             ) &

@@ -22,6 +22,6 @@ jobs:
         env
         exit 1
 
-    - name: shutdown
+    - name: disconnect
       if: always() && startsWith(runner.name, 'circle')
-      run: sudo poweroff
+      run: sudo unlink /run/runner_connected
