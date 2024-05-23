@@ -7,9 +7,6 @@ on:
     paths:
       - .github/workflows/circle-arm.yml
 
-env:
-  create_runner_conn_file: sudo touch /run/runner_connected
-
 jobs:
   test:
     runs-on: circle-arm64
@@ -17,7 +14,7 @@ jobs:
     steps:
     - name: init
       if: startsWith(runner.name, 'circle')
-      run: ${{env.create_runner_conn_file}}
+      run: sudo touch /run/runner_connected
 
     - name: test
       run: |
@@ -27,7 +24,7 @@ jobs:
 
     - name: test2
       if: always()
-      run: pkill /bin/bash
+      run: pkill bash
 
     - name: shutdown
       if: always() && startsWith(runner.name, 'circle')
