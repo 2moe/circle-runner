@@ -22,8 +22,8 @@ jobs:
 
     - name: test
       run: |
-        env
         uname -a
+        env
 
     - name: disconnect
       if: startsWith(runner.name, 'circle')
