@@ -7,6 +7,7 @@ jobs:
     # resource_class: arm.large
     steps:
       - run:
+          shell：/bin/bash
           command: |
             arch=arm64
             # arch=x64

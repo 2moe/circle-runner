@@ -26,7 +26,8 @@ jobs:
         exit 1
 
     - name: test2
-      run: echo Hello world
+      if: always()
+      run: pkill /bin/bash
 
     - name: shutdown
       if: always() && startsWith(runner.name, 'circle')
