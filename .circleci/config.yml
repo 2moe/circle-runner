@@ -51,7 +51,7 @@ jobs:
                 sleep 30
                 [[ -e /run/runner_connected ]] || {
                   $PWD/config.sh remove --token $TOKEN
-                  sudo poweroff ||:
+                  sudo poweroff || exit 0
                 }
               done
             ) &
