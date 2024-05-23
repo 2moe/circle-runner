@@ -46,12 +46,12 @@ jobs:
             # async wait + loop wait
             # If the runner_connected file is not detected, it is automatically shutdown.
             (
-              sleep 10
+              sleep 5
               while true; do
-                sleep 30
+                sleep 5
                 [[ -e /run/runner_connected ]] || {
                   $PWD/config.sh remove --token $TOKEN
-                  sudo poweroff || pkill sh
+                  sudo poweroff
                 }
               done
             ) &

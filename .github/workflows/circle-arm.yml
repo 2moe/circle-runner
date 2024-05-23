@@ -9,7 +9,6 @@ on:
 
 env:
   create_runner_conn_file: sudo touch /run/runner_connected
-  disconnect_cmd: sudo unlink /run/runner_connected
 
 jobs:
   test:
@@ -23,8 +22,9 @@ jobs:
     - name: test
       run: |
         uname -a
-        env
+        exit 1
+        # env
 
-    - name: disconnect
-      if: startsWith(runner.name, 'circle')
-      run: ${{env.disconnect_cmd}}
+    - name: shutdown
+      if: startsWith(runner.name, 'circle') && always()
+      run: sudo poweroff
