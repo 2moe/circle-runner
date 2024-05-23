@@ -1,0 +1,30 @@
+name: Setup CircleCI arm64 runner
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/circle-arm.yml
+
+env:
+  create_runner_conn_file: sudo touch /run/runner_connected
+  disconnect_cmd: sudo unlink /run/runner_connected
+
+jobs:
+  test:
+    runs-on: circle-arm64
+
+    steps:
+    - name: init
+      if: startsWith(runner.name, "circle")
+      run: ${{env.create_runner_conn_file}}
+
+    - name: test
+      run: |
+        env
+        uname -a
+
+    - name: disconnect
+      if: startsWith(runner.name, "circle")
+      run: ${{env.disconnect_cmd}}

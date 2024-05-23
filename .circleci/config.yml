@@ -1,0 +1,60 @@
+version: 2.1
+jobs:
+  setup-runner:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: arm.medium
+    # resource_class: arm.large
+    steps:
+      - run:
+          command: |
+            arch=arm64
+            # arch=x64
+
+            curl -Lo gh.json https://api.github.com/repos/actions/runner/releases/latest
+
+            js=$(cat<<JS_EOF
+              require("fs").readFile("gh.json", "utf8", (_e, data) => {
+                console.log(JSON.parse(data).assets.map((x) => x.browser_download_url).find((x) => x.includes("linux-$arch")))
+              })
+            JS_EOF
+            )
+
+            url=$(node -e "$js")
+
+            [[ -n $url ]] || exit 1
+            mkdir -p ~/runner
+            cd ~/runner
+
+            printf "$url\n"
+            curl -Lo a.tgz "$url"
+            tar -xf a.tgz
+            unlink a.tgz
+
+            conf=(
+              --url     "https://github.com/$REPO"
+              --token   $TOKEN
+              --labels  circle-$arch
+              --name    "circle_$RANDOM"
+            )
+
+            yes "" | ./config.sh ${conf[@]} ||:
+
+            # async wait + loop wait
+            # If the runner_connected file is not detected, it is automatically shutdown.
+            (
+              sleep 30
+              while true; do
+                sleep 40
+                [[ -e /run/runner_connected ]] || {
+                  $PWD/config.sh remove --token $TOKEN
+                  sudo poweroff
+                }
+              done
+            ) &
+            unset TOKEN
+            ./run.sh ||:
+workflows:
+  download-and-run:
+    jobs:
+      - setup-runner
