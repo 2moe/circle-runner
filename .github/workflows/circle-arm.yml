@@ -17,7 +17,7 @@ jobs:
 
     steps:
     - name: init
-      if: startsWith(runner.name, 'circle'")
+      if: startsWith(runner.name, 'circle')
       run: ${{env.create_runner_conn_file}}
 
     - name: test
@@ -26,5 +26,5 @@ jobs:
         uname -a
 
     - name: disconnect
-      if: startsWith(runner.name, 'circle'")
+      if: startsWith(runner.name, 'circle')
       run: ${{env.disconnect_cmd}}

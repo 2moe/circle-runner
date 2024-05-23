@@ -13,12 +13,15 @@ jobs:
 
             curl -Lo gh.json https://api.github.com/repos/actions/runner/releases/latest
 
-            js=$(cat<<JS_EOF
-              require("fs").readFile("gh.json", "utf8", (_e, data) => {
-                console.log(JSON.parse(data).assets.map((x) => x.browser_download_url).find((x) => x.includes("linux-$arch")))
-              })
-            JS_EOF
+            js_exp=(
+              'require("fs").readFile("gh.json", "utf8", (_e, data) => {'
+              'console.log('
+              '  JSON.parse(data).assets'
+              '  .map((x) => x.browser_download_url)'
+              "  .find((x) => x.includes('linux-$arch'))"
+              ')})'
             )
+            printf -v js "%s" ${js_exp[@]}
 
             url=$(node -e "$js")
 
