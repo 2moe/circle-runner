@@ -25,6 +25,10 @@ jobs:
         exit 1
         # env
 
+    - name: test2
+      if: always()
+      run: echo Hello world
+
     - name: shutdown
-      if: startsWith(runner.name, 'circle') && always()
+      if: always() && startsWith(runner.name, 'circle')
       run: sudo poweroff
