@@ -22,10 +22,6 @@ jobs:
         env
         exit 1
 
-    - name: test2
-      if: always()
-      run: pkill bash
-
     - name: shutdown
       if: always() && startsWith(runner.name, 'circle')
       run: sudo poweroff
