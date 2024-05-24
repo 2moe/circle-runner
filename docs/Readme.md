@@ -9,9 +9,10 @@
 
 > Q: What does this thing do?
 
-Using GitHub Actions to Invoke CircleCI Machines and Write CI Configuration Using Actions Syntax.
+A:
+  Using GitHub Actions to Invoke CircleCI Machines and Write CI Configuration Using Actions Syntax.
 
-In a nutshell: the syntax for using Github Actions on a CircleCI machine.
+  In a nutshell: the syntax for using Github Actions on a CircleCI machine.
 
 > Q: Why did I create this repo?
 

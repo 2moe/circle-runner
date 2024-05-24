@@ -9,7 +9,7 @@
 
 > Q: 这玩意儿有什么用？
 
-使用 github actions 调用 CircleCI 的机器，并使用 actions 的语法来编写 CI 配置。
+A: 使用 github actions 调用 CircleCI 的机器，并使用 actions 的语法来编写 CI 配置。
 
 > Q: 为什么我会创建这个 repo 呢?
 
