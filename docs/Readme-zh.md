@@ -1,9 +1,9 @@
 # CircleCI Runner
 
-| Languages/語言         |
-| ---------------------- |
-| 中文                   |
-| [English](./Readme.md) |
+| Languages/語言         | ID         |
+| ---------------------- | ---------- |
+| 中文                   | zh-Hans-CN |
+| [English](./Readme.md) | en-Latn-US |
 
 ## Q&A
 
