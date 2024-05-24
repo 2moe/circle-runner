@@ -73,7 +73,7 @@ jobs:
               $url
             )
             unset _PAT CIRCLE_USERNAME 
-            json=$(curl -L $args)
+            json=$(curl $args)
             self_hosted_tk=$(
               node -e 'console.log(JSON.parse(process.argv[1]).token)' -- $json
             )
