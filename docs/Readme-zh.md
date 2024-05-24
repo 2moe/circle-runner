@@ -39,7 +39,7 @@ Organization Settings --> Contexts --> Create Context
 
 ![org settings](https://github.com/2moe/circle-runner/assets/25324935/4c6ae216-9383-4f71-9233-ea8838279788)
 
-![cretae contexts](https://github.com/2moe/circle-runner/assets/25324935/2fb7020a-5d17-4f3a-b80a-baf6437156e4)
+![create contexts](https://github.com/2moe/circle-runner/assets/25324935/2fb7020a-5d17-4f3a-b80a-baf6437156e4)
 
 ### Step3. 添加私密环境变量
 
@@ -80,6 +80,8 @@ jobs:
 > 组织可以共享 runners, 而不用像个人仓库那样为不同仓库创建不同的 runners。
 
 比如 `REPO: 2cd`, `2cd` 是一个组织。
+
+---
 
 您如果需要使用 x64 的环境，则需：
 

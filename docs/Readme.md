@@ -42,7 +42,7 @@ Organization Settings --> Contexts --> Create Context
 
 ![org settings](https://github.com/2moe/circle-runner/assets/25324935/4c6ae216-9383-4f71-9233-ea8838279788)
 
-![cretae contexts](https://github.com/2moe/circle-runner/assets/25324935/2fb7020a-5d17-4f3a-b80a-baf6437156e4)
+![create contexts](https://github.com/2moe/circle-runner/assets/25324935/2fb7020a-5d17-4f3a-b80a-baf6437156e4)
 
 ### Step3: Add Secret Environment Variables
 
@@ -85,7 +85,10 @@ If you need to use an x64 environment:
 - Change `arm.medium` to `medium` or `large`.
 - Change `ARCH: arm64` to `ARCH: x64`.
 
-See also: <https://circleci.com/docs/using-linuxvm/>
+See also:
+
+- <https://circleci.com/docs/using-linuxvm/>
+- <https://circleci.com/product/features/resource-classes/>
 
 ## Other Notes
 
