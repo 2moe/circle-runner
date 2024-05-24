@@ -71,8 +71,7 @@ jobs:
     environment:
       ARCH: arm64
       # OR ARCH: x64
-      # You should change the REPO to your own repository.
-      # If no "/" is included, it is automatically recognized as an organization.
+      # 
       REPO: 2moe/circle-runner
 ```
 
