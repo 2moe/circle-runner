@@ -95,7 +95,7 @@ pat_token=""
 
 # 一个项目要么是组织项目，要么是个人项目
 # 实际上，这里使用 enum（枚举类型）会更合适。
-# enum Project { Personal(Url), Org(Url) }
+# enum Project { Personal(String), Org(String) }
 {
   # e.g., 2cd
   org=""

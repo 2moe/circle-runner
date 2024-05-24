@@ -92,7 +92,7 @@ pat_token=""
 
 # A project can either be an organization project or a personal project.
 # In fact, using an enum type here would be more appropriate.
-# enum Project { Personal(Url), Org(Url) }
+# enum Project { Personal(String), Org(String) }
 {
   # e.g., 2cd
   org=""
