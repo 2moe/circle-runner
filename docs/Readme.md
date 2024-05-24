@@ -69,8 +69,6 @@ jobs:
     # resource_class: arm.large
     environment:
       ARCH: arm64
-      # OR ARCH: x64
-      # 
       REPO: 2moe/circle-runner
 ```
 
@@ -79,6 +77,15 @@ Please change the `REPO: 2moe/circle-runner` to your own repository.
 If the value of REPO does not contain "/", it will be automatically recognized as an organization.
 
 For example, `REPO: 2cd` refers to an organization.
+
+---
+
+If you need to use an x64 environment:
+
+- Change `arm.medium` to `medium` or `large`.
+- Change `ARCH: arm64` to `ARCH: x64`.
+
+See also: <https://circleci.com/docs/using-linuxvm/>
 
 ## Other Notes
 

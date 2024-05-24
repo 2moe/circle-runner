@@ -70,8 +70,6 @@ jobs:
     # resource_class: arm.large
     environment:
       ARCH: arm64
-      # OR ARCH: x64
-      # 
       REPO: 2moe/circle-runner
 ```
 
@@ -82,6 +80,13 @@ jobs:
 > 组织可以共享 runners, 而不用像个人仓库那样为不同仓库创建不同的 runners。
 
 比如 `REPO: 2cd`, `2cd` 是一个组织。
+
+您如果需要使用 x64 的环境，则需：
+
+- 将 `arm.medium` 改为 `medium` 或 `large`。
+- 将 `ARCH: arm64` 改为  `ARCH: x64`
+
+另请参阅: <https://circleci.com/docs/using-linuxvm/>
 
 ## 其他说明
 
