@@ -44,7 +44,6 @@ jobs:
               exit 1
             }
 
-            # print $url
             curl -Lo a.tgz $url
             tar -xf a.tgz
             unlink a.tgz
