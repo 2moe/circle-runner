@@ -79,9 +79,9 @@ If the value of REPO does not contain "/", it will be automatically recognized a
 
 For example, `REPO: 2cd` refers to an organization.
 
-## Other notes
+## Other Notes
 
-### obtain (generate) a registration token
+### Obtain (generate) A Registration Token
 
 ```zsh
 # shell: zsh
