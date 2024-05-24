@@ -88,7 +88,11 @@ jobs:
 - 将 `arm.medium` 改为 `medium` 或 `large`。
 - 将 `ARCH: arm64` 改为  `ARCH: x64`
 
-另请参阅: <https://circleci.com/docs/using-linuxvm/>
+另请参阅:
+
+- <https://circleci.com/docs/using-linuxvm/>
+
+- <https://circleci.com/product/features/resource-classes/#arm>
 
 ## 其他说明
 

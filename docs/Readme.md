@@ -88,7 +88,7 @@ If you need to use an x64 environment:
 See also:
 
 - <https://circleci.com/docs/using-linuxvm/>
-- <https://circleci.com/product/features/resource-classes/>
+- <https://circleci.com/product/features/resource-classes/#arm>
 
 ## Other Notes
 
