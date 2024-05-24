@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - .github/workflows/circle-arm.yml
+      - .github/workflows/arm64.yml
 
 jobs:
   test:
@@ -19,7 +19,6 @@ jobs:
     - name: test
       run: |
         uname -a
-        env
         exit 1
 
     - name: disconnect
