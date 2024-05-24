@@ -143,4 +143,4 @@ output:
 
 对于频繁变动的环境，每次失效都要手动获取就很麻烦。
 
-而使用 pat (a.k.a, personal-access-token) 可以自动获取新的 registration token，这样会更方便。
+而使用 pat (a.k.a, personal-access-token) 可以自动生成新的 registration token，这样会更方便。

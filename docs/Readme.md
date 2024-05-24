@@ -139,4 +139,4 @@ Isn't it simpler to use the token provided when creating a runner directly?
 
 For environments that change frequently, manually obtaining a new token each time it expires can be cumbersome.
 
-Using a personal access token allows for automatic retrieval of a new registration token, making the process more convenient.
+Using a personal access token automatically generates a new registration token, making it even easier.
