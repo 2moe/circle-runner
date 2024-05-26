@@ -11,6 +11,8 @@ jobs:
       # You should change the REPO to your own repository.
       # If no "/" is included, it is automatically recognized as an organization.
       REPO: 2moe/circle-runner
+      # label="${LABEL_PREFIX}${ARCH}"
+      LABEL_PREFIX: circle-
     steps:
       - run:
           name: get gh-api json & install zsh
@@ -80,7 +82,7 @@ jobs:
             conf=(
               --url     "https://github.com/$REPO"
               --token   $self_hosted_tk
-              --labels  circle-$ARCH
+              --labels  "${LABEL_PREFIX}${ARCH}"
               --name    "circle-$RANDOM"
             )
 
