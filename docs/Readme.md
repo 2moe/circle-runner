@@ -97,7 +97,7 @@ See also:
 ```zsh
 # shell: zsh
 
-# e.g., github_pat_1234567ABC_xxyy
+# e.g., github_pat_123456ABC_xxyy
 token=""
 
 # A project can either be an organization project or a personal project.

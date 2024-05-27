@@ -101,19 +101,15 @@ jobs:
 ```zsh
 # shell: zsh
 
-# e.g., github_pat_1234567ABC_xxyy
+# e.g., github_pat_123456ABC_xxyy
 pat_token=""
 
 # 一个项目要么是组织项目，要么是个人项目
-# 实际上，这里使用 enum（枚举类型）会更合适。
-# enum Project { Personal(String), Org(String) }
-{
   # e.g., 2cd
   org=""
 
   # e.g., 2moe/xxx
   personal_repo=""
-}
 
 url="https://api.github.com/repos/$personal_repo/actions/runners/registration-token"
 
@@ -125,7 +121,7 @@ args=(
   -L
   -X POST
   -H 'Accept: application/vnd.github+json'
-  -H "Authorization: Bearer $pat_token"
+  -H "Authorization: Bearer $token"
   -H 'X-GitHub-Api-Version: 2022-11-28'
   $url
 )
