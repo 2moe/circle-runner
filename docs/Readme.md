@@ -98,18 +98,14 @@ See also:
 # shell: zsh
 
 # e.g., github_pat_1234567ABC_xxyy
-pat_token=""
+token=""
 
 # A project can either be an organization project or a personal project.
-# In fact, using an enum type here would be more appropriate.
-# enum Project { Personal(String), Org(String) }
-{
   # e.g., 2cd
   org=""
 
   # e.g., 2moe/xxx
   personal_repo=""
-}
 
 url="https://api.github.com/repos/$personal_repo/actions/runners/registration-token"
 
@@ -121,7 +117,7 @@ args=(
   -L
   -X POST
   -H 'Accept: application/vnd.github+json'
-  -H "Authorization: Bearer $pat_token"
+  -H "Authorization: Bearer $token"
   -H 'X-GitHub-Api-Version: 2022-11-28'
   $url
 )
